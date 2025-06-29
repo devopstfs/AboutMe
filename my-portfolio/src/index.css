@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500&family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-background: #121212;
+  --color-surface: #1E1E1E;
+  --color-primary: #D4AF37;
+  --color-text: #E0E0E0;
+  --color-text-secondary: #A0A0A0;
+}
+
+.light {
+  --color-background: #F5F5F5;
+  --color-surface: #FFFFFF;
+  --color-primary: #B8860B;
+  --color-text: #212121;
+  --color-text-secondary: #5f6368;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+  scroll-behavior: smooth;
+  font-family: 'Inter', sans-serif;
+}
+
+.font-heading { font-family: 'Playfair Display', serif; }
+.font-nav { font-family: 'Oswald', sans-serif; }
+
+.orbiting-lines .line {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 200%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-primary), transparent);
+  border-radius: 50%;
+  animation: orbit 10s linear infinite;
+  opacity: 0.5;
+}
+
+.orbiting-lines .line:nth-child(2) { animation-duration: 12s; animation-delay: -3s; }
+.orbiting-lines .line:nth-child(3) { animation-duration: 15s; animation-delay: -5s; }
+
+@keyframes orbit {
+  from { transform: translate(-50%, -50%) rotate(0deg) translateX(120px) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg) translateX(120px) rotate(-360deg); }
+}
+
+.bg-theme-background { background-color: var(--color-background); }
+.bg-theme-surface { background-color: var(--color-surface); }
+.text-theme-primary { color: var(--color-primary); }
+.text-theme-text { color: var(--color-text); }
+.text-theme-text-secondary { color: var(--color-text-secondary); }
+.bg-theme-primary { background-color: var(--color-primary); }
+.border-theme-primary { border-color: var(--color-primary); }
+.ring-theme-primary { --tw-ring-color: var(--color-primary); }
+.ring-offset-theme-background { --tw-ring-offset-color: var(--color-background); }
+.ring-offset-theme-surface { --tw-ring-offset-color: var(--color-surface); }
+
+.shadow-theme-primary\/10 { box-shadow: 0 4px 14px 0 rgba(212, 175, 55, 0.1); }
+.shadow-theme-primary\/20 { box-shadow: 0 4px 14px 0 rgba(212, 175, 55, 0.2); }
+.bg-theme-primary\/10 { background-color: rgba(212, 175, 55, 0.1); }
+.border-theme-primary\/20 { border-color: rgba(212, 175, 55, 0.2); }
+.bg-grid-gold-900\[\[0\.1\]] { background-image: linear-gradient(rgba(212, 175, 55, 0.5) 1px, transparent 1px), linear-gradient(to right, rgba(212, 175, 55, 0.5) 1px, var(--color-background) 1px); background-size: 3rem 3rem; opacity: 0.1; }
